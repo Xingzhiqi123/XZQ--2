@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="BlankApp1.Views.MessageWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BlankApp1.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Margin="247,36,0,0" TextWrapping="Wrap" Text="{Binding person.DepartmentCode}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,37,0,0" TextWrapping="Wrap" Text="部门代码" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="600,38,0,0" TextWrapping="Wrap" Text="部门名称" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="653,38,0,0" TextWrapping="Wrap" Text="{Binding Path=person.DepartmentName}" VerticalAlignment="Top" Width="120"/>
+        <TabControl Margin="0,90,0,0">
+            <TabItem Header="基本">
+                <Grid Background="#FFD4EEFB">
+                    <TextBlock HorizontalAlignment="Left" Margin="126,50,0,0" TextWrapping="Wrap" Text="负责人代码" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="191,49,0,0" TextWrapping="Wrap" Text="{Binding Path=person.PrincipalCode}" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="425,48,0,0" TextWrapping="Wrap" Text="上级部门代码" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="502,48,0,0" TextWrapping="Wrap" Text="{Binding Path=person.SuperiorDepartmentCode}" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="792,48,0,0" TextWrapping="Wrap" Text="组织名称" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding  Path=person.OrganizationName}" Width="120" Height="25" Margin="845,41,0,0">
+                        <ComboBoxItem IsSelected="True" Content="建工集团"></ComboBoxItem>
+                        <ComboBoxItem Content="强盛集团"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="156,134,0,0" TextWrapping="Wrap" Text="生产车间" VerticalAlignment="Top"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="222,134,0,0" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="314,134,0,0" TextWrapping="Wrap" Text="产线" VerticalAlignment="Top"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="356,134,0,0" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="514,134,0,0" TextWrapping="Wrap" Text="部门分组" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="580,134,0,0" VerticalAlignment="Top" Width="120" Text="{Binding  Path=person.DataBool}">
+                        <ComboBoxItem IsSelected="True" Content="销售部"></ComboBoxItem>
+                        <ComboBoxItem Content="生产部"></ComboBoxItem>
+                        <ComboBoxItem Content="人事部"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="223,216,0,0" TextWrapping="Wrap" Text="备注" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Text="{Binding Path=person.DataBool}" Margin="279,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+                    <Button Content="添加" Command="{Binding Path=AddCmd}" HorizontalAlignment="Left" Margin="418,276,0,0" VerticalAlignment="Top">
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="其他">
+                <Grid Background="#FFD4EEFB">
+                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
